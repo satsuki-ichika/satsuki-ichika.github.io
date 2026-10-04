@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://satsuki-ichika.github.io/sitemap.xml

@@ -1,0 +1,208 @@
+
+    /* =========================================================
+       AGE MODAL
+       ========================================================= */
+
+    .age-overlay {
+      position: fixed;
+      inset: 0;
+
+      z-index: 9999;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 20px;
+
+      background:
+        rgba(25, 22, 22, .72);
+
+      backdrop-filter: blur(10px);
+
+      opacity: 0;
+      visibility: hidden;
+
+      transition:
+        opacity .2s ease,
+        visibility .2s ease;
+    }
+
+    .age-overlay.is-visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .age-modal {
+      width: min(440px, 100%);
+
+      padding: 30px;
+
+      border:
+        1px solid rgba(255,255,255,.18);
+
+      border-radius: 20px;
+
+      background: var(--surface);
+
+      box-shadow: var(--shadow);
+
+      text-align: center;
+
+      transform: translateY(10px) scale(.98);
+
+      transition:
+        transform .2s ease;
+    }
+
+    .age-overlay.is-visible .age-modal {
+      transform: translateY(0) scale(1);
+    }
+
+    .age-icon {
+      width: 56px;
+      height: 56px;
+
+      display: grid;
+      place-items: center;
+
+      margin: 0 auto 18px;
+
+      border-radius: 50%;
+
+      background: var(--surface-2);
+
+      font-size: 1.4rem;
+    }
+
+    .age-modal h2 {
+      margin: 0 0 10px;
+
+      font-size: 1.65rem;
+      letter-spacing: -.03em;
+    }
+
+    .age-modal p {
+      margin: 0 auto;
+
+      max-width: 340px;
+
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    .age-countdown {
+      margin: 20px 0;
+
+      color: var(--accent);
+
+      font-size: .85rem;
+      font-weight: 700;
+    }
+
+    .age-countdown strong {
+      display: inline-grid;
+      place-items: center;
+
+      width: 28px;
+      height: 28px;
+
+      margin-left: 4px;
+
+      border-radius: 50%;
+
+      background: var(--accent);
+      color: white;
+    }
+
+    .age-actions {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 10px;
+
+      margin-top: 22px;
+    }
+
+    .age-btn {
+      min-height: 46px;
+
+      border-radius: 11px;
+
+      padding: 10px 14px;
+
+      border: 1px solid var(--border);
+
+      font-weight: 700;
+    }
+
+    .age-btn-no {
+      background: transparent;
+      color: var(--text);
+    }
+
+    .age-btn-yes {
+      background: var(--text);
+      color: white;
+      border-color: var(--text);
+    }
+
+    .age-btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .age-note {
+      margin-top: 18px !important;
+
+      font-size: .72rem !important;
+      line-height: 1.5;
+
+      color: var(--muted);
+    }
+
+
+    /* =========================================================
+       RESPONSIVE
+       ========================================================= */
+
+    @media (max-width: 680px) {
+      .nav {
+        min-height: 58px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding: 60px 0 45px;
+      }
+
+      .section {
+        padding: 40px 0;
+      }
+
+      .gallery {
+        grid-template-columns:
+          repeat(2, minmax(0, 1fr));
+
+        gap: 10px;
+      }
+
+      .art-info {
+        padding: 10px;
+      }
+
+      .art-info h3 {
+        font-size: .9rem;
+      }
+
+      .art-info p {
+        font-size: .75rem;
+      }
+
+      .age-modal {
+        padding: 25px 20px;
+      }
+    }
